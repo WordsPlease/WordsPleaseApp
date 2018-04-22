@@ -114,7 +114,7 @@ Words need boolean marking if end of thought so frontend knows to render restart
 
 
 Sample State:
-
+```
 {
 	Entities: {
 		ActiveTiles: {
@@ -152,9 +152,10 @@ Tiles: {
 	Parent-Mode: {Off},
 	Connectivity: Offline (Figure out later-- depends on what to do for speech-to-text)
 }
-
+```
 Schema:
 `Setting`
+
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
 | `id`            |  integer      | not null, primary key |
@@ -163,6 +164,7 @@ Schema:
 
 
 `Start`
+
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
 | `id`            |  integer      | not null, primary key |
@@ -173,6 +175,7 @@ Schema:
 
 
 `Middle`
+
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
 | `id`            |  integer      | not null, primary key |
@@ -182,6 +185,7 @@ Schema:
 | `start_id` | integer | not null, foreign key |
 
 `finisher`
+
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
 | `id`            |  integer      | not null, primary key |
