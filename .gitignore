@@ -28,6 +28,7 @@ build/
 .idea
 .gradle
 local.properties
+android/
 *.iml
 
 # node.js
