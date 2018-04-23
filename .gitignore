@@ -55,3 +55,14 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# Ignore bundler config.
+words-please-backend/.bundle
+
+# Ignore the default SQLite database.
+words-please-backend/db/*.sqlite3
+words-please-backend/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+words-please-backend/log/*
+words-please-backend/tmp/*
