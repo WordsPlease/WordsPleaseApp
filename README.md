@@ -30,7 +30,7 @@ It is built for the Ipad with React Native. We will be using a Rails back-end wi
       * read sentence aloud on sentence tap/press
 
 ## Wireframes
-![Tiffany will upload this]()
+![thankYouForWhoeverDidTheFormattingForMe](http://res.cloudinary.com/dqj3kgpoj/image/upload/v1524365654/wireframe.png)
 
 ## Functions:
 
