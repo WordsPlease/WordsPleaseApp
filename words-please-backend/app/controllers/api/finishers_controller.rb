@@ -7,6 +7,6 @@ class Api::FinishersController < ApplicationController
   end
 
   def show
-    @selected_finisher = Finisher.find(params[:id])
+    @finisher = Finisher.find(params[:id])
   end
 end

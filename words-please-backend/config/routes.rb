@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :finishers, only: %i[index show]
   end
 
-  root "static_pages#root"
+  # root "static_pages#root"
   # will this be the best way to create a tutorial page?
   # root directs to tutorial component and all others are api calls
   # to https://wordsplease/herokuapps.com/api/{api call}

@@ -4,6 +4,6 @@ class Api::MiddlesController < ApplicationController
   end
 
   def show
-    @selected_middle = Middle.find(params[:id])
+    @middle = Middle.find(params[:id])
   end
 end

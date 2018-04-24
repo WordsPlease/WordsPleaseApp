@@ -4,6 +4,6 @@ class Api::StartersController < ApplicationController
   end
 
   def show
-    @selected_starter = Starter.find(params(:id))
+    @starter = Starter.find(params(:id))
   end
 end
