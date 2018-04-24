@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'boostrap-sass'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 group :development, :test do
@@ -44,7 +44,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'jquery'
+  gem 'jquery-rails'
   gem 'binding_of_caller'
   gem 'better_errors'
 end
