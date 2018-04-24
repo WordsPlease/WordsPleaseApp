@@ -14,13 +14,13 @@ class DisplayIndex extends Component {
 
   renderList() {
     return this.state.list.map(item =>
-      <DisplayItem key={item.id} item={item} />
+      <DisplayDetail key={item.id} item={item} />
     )
   }
 
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
         {this.renderList()}
       </View>
     )

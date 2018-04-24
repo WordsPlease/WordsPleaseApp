@@ -11,7 +11,8 @@ import {
   Text,
   View
 } from 'react-native';
-import Setting from './src/components/Setting';
+import DisplayIndex from './src/components/DisplayIndex';
+import Header from './src/components/Header';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -24,8 +25,9 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Setting />
+      <View style={{flex: 1}}>
+        <Header style={{flex: 2}} />
+        <DisplayIndex style={{flex: 1}} />
       </View>
     );
   }
