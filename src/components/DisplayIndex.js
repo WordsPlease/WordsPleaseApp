@@ -21,10 +21,12 @@ class DisplayIndex extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        {this.renderList()}
+        <View style={{flex: 1, backgroundColor: '#F7DC6F'}} />
+        <View style ={{flex: 1, backgroundColor: '#82E0AA'}} />
       </View>
     )
   }
+  // {this.renderList()}
 
 }
 
