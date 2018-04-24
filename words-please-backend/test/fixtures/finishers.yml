@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: finishers
+#
+#  id         :integer          not null, primary key
+#  title      :string           not null
+#  is_last    :string           not null
+#  image_path :string
+#  middle_id  :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  is_last: false
+  image_path: MyString
+  setting_id: 1
+  middle_id: 1
+
+two:
+  title: MyString
+  is_last: false
+  image_path: MyString
+  setting_id: 1
+  middle_id: 1

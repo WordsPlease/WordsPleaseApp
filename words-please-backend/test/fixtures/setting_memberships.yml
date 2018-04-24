@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: setting_memberships
+#
+#  id          :integer          not null, primary key
+#  setting_id  :integer          not null
+#  finisher_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  setting_id: 1
+  finisher_id: 1
+
+two:
+  setting_id: 1
+  finisher_id: 1
