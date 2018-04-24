@@ -13,8 +13,8 @@ It is built for the Ipad with React Native. We will be using a Rails back-end wi
          * 3 parts maximum
          * Intuitive Picture Representation
    * Sentence Display
-         * Active tiles
-         * Sentence In progress
+       * Active tiles
+       * Sentence In progress
    * Button to reset
       * tap to go back
       * hold to reset
@@ -115,37 +115,39 @@ Words need boolean marking if end of thought so frontend knows to render restart
 
 Sample State:
 ```
+
 {
 	Entities: {
-		ActiveTiles: {
-			0: Starter: {
-id: 1,
-title: ‘’,
-imgUrl: ‘oajsdi’
-}
+	   ActiveTiles: {
+        0: Starter: {
+          id: 1,
+          title: ‘’,
+          imgUrl: ‘oajsdi’
+        }
 			1: Middle: 1,
-},
-Tiles: {
-	[
-		{Tile_id_0 :{
-			Id: 0,
-			image url:sdfsd,
-			Title: “I want”,
-			Is_end : false},
-	{Tile_id_3 :{
-			id : 3,
-			Image url:skopfk,
-			Title: ‘I feel”,
-			Is_end : false}
-]
-	},
-
+    },
+    Tiles: {
+    	[
+    		{Tile_id_0 :{
+    			Id: 0,
+    			image url:sdfsd,
+    			Title: “I want”,
+    			Is_end : false},
+    	 {
+        Tile_id_3 :{
+    			id : 3,
+    			Image url:skopfk,
+    			Title: ‘I feel”,
+    			Is_end : false
+        }
+      ]
+    },
 }
-		Setting: {
-			1: {
-			Setting_id: 1,
-			ImagePath: ./documents?
-			}
+	Setting: {
+		1: {
+		Setting_id: 1,
+		ImagePath: ./documents?
+		}
 },
 },
 	Errors: {},
@@ -154,7 +156,7 @@ Tiles: {
 }
 ```
 Schema:
-`Setting`
+`settings`
 
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
@@ -163,7 +165,7 @@ Schema:
 | `image_path`      |  string      | not null |
 
 
-`Start`
+`starters`
 
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
@@ -174,7 +176,7 @@ Schema:
 
 
 
-`Middle`
+`middles`
 
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
@@ -184,7 +186,7 @@ Schema:
 | `img_path`  | string | not null |
 | `start_id` | integer | not null, foreign key |
 
-`finisher`
+`finishers`
 
 | column name   |data type      | details |
 | ------------- |:-------------:| -----:  |
@@ -194,6 +196,13 @@ Schema:
 | `img_path`  | string | not null |
 | `middle_id` | integer | not null, foreign key |
 
+`setting_memberships`
+
+| column name   |data type      | details |
+| ------------- |:-------------:| -----:  |
+| `id`            |  integer      | not null, primary key |
+| `finisher_id` | integer | not null, foreign key |
+| `setting_id` | integer | not null, foreign key |
 
 
 Rolling list of questions:
