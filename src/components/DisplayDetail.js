@@ -5,18 +5,18 @@ import Tile from './Tile';
 const DisplayDetail = (props) => {
   return (
     <Tile>
-      <View style={styles.displayDetail}>
+      <View>
         <Text>{props.item.title}</Text>
       </View>
     </Tile>
   )
 }
 
-const styles = {
-  displayDetail: {
-    flexDirection: 'column',
-    justifyContent: 'space-around'
-  }
-}
+// const styles = {
+//   displayDetail: {
+//     flexDirection: 'column',
+//     justifyContent: 'space-around'
+//   }
+// }
 
 export default DisplayDetail;
