@@ -18,11 +18,10 @@ const styles = {
     elevation: 1,
     marginLeft: 0,
     marginRight: 0,
-    marginTop: 0
+    marginTop: 0,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    width: 100,
-    height: 100
+    width: '25%'
   }
 }
 
