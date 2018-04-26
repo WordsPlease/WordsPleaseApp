@@ -1,15 +1,15 @@
 // export default const fetchSetting = (settingId) => {
 //
 // }
+export const dummy = 'NOTHING'
 
-
-const fetchSetting = (settingId) => fetch(`http://words-please.herokuapp.com/api/settings/${settingId}`, {
-  method: 'GET',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  }
-});
+export const fetchSetting = (settingId) => {
+  return (
+    fetch(`https://words-please.herokuapp.com/api/settings/${settingId}`, {
+      method: 'GET'
+    })
+  )
+}
 
 // export default fetchSetting = (settingId) => fetch(`http://192.168.2.88:3000/api/settings/${settingId}`, {
 //   method: 'GET',
@@ -21,5 +21,3 @@ const fetchSetting = (settingId) => fetch(`http://words-please.herokuapp.com/api
 //     setting_id: 'settingId',
 //   }),
 // });
-
-export default fetchSetting
