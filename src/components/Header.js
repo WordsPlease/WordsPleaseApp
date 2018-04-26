@@ -4,9 +4,9 @@ import { View } from 'react-native';
 class Header extends Component {
 
   componentWillMount(){
-    console.log(this.props.fetchSetting);
-
-    this.props.fetchSetting(1)
+    // console.log(this.props.getSetting);
+    // console.warn(this.props.getSetting(1));
+    this.props.getSetting(1)
     // this.props.fetch();
   }
 

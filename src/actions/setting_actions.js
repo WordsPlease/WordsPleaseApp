@@ -1,4 +1,4 @@
-import * as SettingUtil from '../util/setting_api_util';
+import { fetchSetting } from '../util/setting_api_util';
 
 export const RECEIVE_SETTING = 'RECEIVE_SETTING'
 
@@ -7,10 +7,15 @@ export const receiveSetting = (setting) => ({
   setting
 })
 
-export const fetchSetting = (id) => dispatch => (
-  SettingUtil.fetchSetting(id).then(setting => {
-  dispatch(receiveSetting(setting))
-  }
+export const getSetting = (id) => dispatch => (
+  fetchSetting(id).then(
+  async function(response) {
+    // Async version
+    let json = await response.json();
+    dispatch(receiveSetting(json))
+    // .then version
+    // setting.json().then(json => dispatch(receiveSetting(json)))
+    }
 ))
 
 export const fetch = {
