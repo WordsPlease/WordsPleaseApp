@@ -3,7 +3,7 @@
 // }
 
 
-const fetchSetting = (settingId) => fetch(`http://words-please.herokuapp.com/api/settings/${settingId}`, {
+const fetchSetting = (settingId) => fetch(`https://words-please.herokuapp.com/api/settings/${settingId}`, {
   method: 'GET'
 });
 
