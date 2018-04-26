@@ -12,20 +12,42 @@ import {
   View
 } from 'react-native';
 import DisplayIndex from './src/components/DisplayIndex';
-import HeaderContainer from './src/components/HeaderContainer';
-import store from './src/store/store';
+import Header from './src/components/Header';
+// import store from './src/store/store';
 
 type Props = {};
 export default class App extends Component {
 
+  constructor() {
+    super()
+    this.onPressHandler = this.onPressHandler.bind(this);
+    this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
+  }
+
+  onPressHandler() {
+    if (this.state.currentTileSet === "starter") {
+      this.setState({ activeStarter: {title: "starter"}, currentTileSet: "middle"})
+    }
+    else if (this.state.currentTileSet === "middle") {
+      let nextState = ""
+      //check activeStarter to see if we are done, otherwise change to a finisher
+      this.setState({ activeMiddle: {title: "middle"}, currentTileSet: nextState})
+    }
+    else if (this.state.currentTileSet === "finisher") {
+      this.setState({ activeFinisher: {title: "finisher"}, currentTileSet: "done"})
+    }
+  }
+  //back button will handle the reset state
+  // <Provider store={store}>
+  // </Provider>
+
   render() {
     return (
-      <Provider store={store}>
         <View style={{flex: 1}}>
-          <HeaderContainer style={{flex: 2}} />
-          <DisplayIndex style={{flex: 1}} />
+          <Header style={{flex: 2}} />
+          <DisplayIndex onPress={this.onPressHandler}
+            style={{flex: 1}} />
         </View>
-      </Provider>
     );
   }
 }

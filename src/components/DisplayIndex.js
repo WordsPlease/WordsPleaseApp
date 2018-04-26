@@ -25,7 +25,8 @@ class DisplayIndex extends Component {
         renderSubList = []
       }
 
-      renderSubList.push(<DisplayDetail style={styles.box} key={item.id} item={item} />)
+      renderSubList.push(<DisplayDetail style={styles.box} key={item.id} item={item}
+        onPress={this.props.onPress} />)
 
     })
 

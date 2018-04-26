@@ -1,11 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 const Tile = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    <TouchableOpacity style={styles.containerStyle}
+      onPress={props.onPress}>
       {props.children}
-    </View>
+    </TouchableOpacity>
   )
 }
 

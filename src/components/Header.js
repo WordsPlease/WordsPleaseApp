@@ -3,13 +3,14 @@ import { View } from 'react-native';
 
 class Header extends Component {
 
+  // this.props.fetchSetting(1)
   componentWillMount(){
-    this.props.fetchSetting(1)
+    // this.setState({[]})
   }
 
   render() {
 
-    console.log(this.props.fetchSetting(1));
+    // console.log(this.props.fetchSetting(1));
 
     return(
     <View style={{flex: 2, flexDirection: 'row'}}>
