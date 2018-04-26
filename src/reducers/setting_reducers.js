@@ -1,4 +1,4 @@
-import { RECEIVE_SETTING, getSetting, receiveSetting } from '../actions/setting_actions';
+import { RECEIVE_SETTING, receiveSetting } from '../actions/setting_actions';
 
 const SettingReducer = (state = {}, action) => {
   switch (action.type) {

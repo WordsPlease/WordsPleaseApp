@@ -1,8 +1,8 @@
 import { fetchSetting } from '../util/setting_api_util';
 
-export const RECEIVE_SETTING = 'RECEIVE_SETTING'
+export const RECEIVE_SETTING = 'RECEIVE_SETTING';
 
-export const receiveSetting = (setting) => ({
+const receiveSetting = (setting) => ({
   type: RECEIVE_SETTING,
   setting
 })

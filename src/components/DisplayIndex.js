@@ -13,8 +13,14 @@ class DisplayIndex extends Component {
   componentWillMount() {
     this.setState({list: TestData})
     this.renderList = this.renderList.bind(this)
+
+  }
+  
+  componentDidMount() {
+    debugger
   }
 
+  
   renderList() {
 
     let renderList = []

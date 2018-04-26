@@ -22,7 +22,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <View style={{flex: 1}}>
-          <HeaderContainer style={{flex: 2}} />
+          <HeaderContainer style={{flex: 4}} />
           <DisplayIndex style={{flex: 1}} />
         </View>
       </Provider>
