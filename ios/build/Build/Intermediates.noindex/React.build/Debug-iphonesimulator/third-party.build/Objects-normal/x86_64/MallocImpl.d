@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/third-party/folly-2016.09.26.00/folly/detail/MallocImpl.cpp \
-  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/Malloc.h \
-  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Portability.h \
-  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Config.h \
-  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/CPortability.h
+  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/third-party/folly-2016.09.26.00/folly/detail/MallocImpl.cpp \
+  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/detail/Malloc.h \
+  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Portability.h \
+  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/portability/Config.h \
+  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/CPortability.h
