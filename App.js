@@ -26,6 +26,7 @@ export default class App extends Component {
 
   onPressHandler() {
     if (this.state.currentTileSet === "starter") {
+      //based on onPress. Insert tile into activeStarter position if the tile is a starter
       this.setState({ activeStarter: {title: "starter"}, currentTileSet: "middle"})
     }
     else if (this.state.currentTileSet === "middle") {
@@ -37,6 +38,7 @@ export default class App extends Component {
       this.setState({ activeFinisher: {title: "finisher"}, currentTileSet: "done"})
     }
   }
+
   //back button will handle the reset state
   // <Provider store={store}>
   // </Provider>
