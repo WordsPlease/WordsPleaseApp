@@ -8,5 +8,5 @@ export const receiveSetting = (setting) => ({
 })
 
 export const fetchSetting = (id) => dispatch => (
-  SettingUtil.fetchSetting(id).then(event => dispatch(receiveSetting)
-  ))
+  SettingUtil.fetchSetting(id).then(event => dispatch(receiveSetting(event))
+))

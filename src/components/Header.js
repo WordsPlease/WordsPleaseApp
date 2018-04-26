@@ -9,7 +9,7 @@ class Header extends Component {
 
   render() {
 
-    console.log(this.props.fetchSetting);
+    console.log(this.props.fetchSetting(1));
 
     return(
     <View style={{flex: 2, flexDirection: 'row'}}>
