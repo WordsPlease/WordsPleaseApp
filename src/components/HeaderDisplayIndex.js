@@ -9,10 +9,10 @@ import DisplayIndex from './DisplayIndex';
 import Header from './Header';
 
 
-export default class HeaderDisplayIndex extends Component {
+class HeaderDisplayIndex extends Component {
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.onPressHandler = this.onPressHandler.bind(this);
     this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
   }
@@ -32,13 +32,20 @@ export default class HeaderDisplayIndex extends Component {
     }
   }
 
+  //back button will handle the reset state
+  // <Provider store={store}>
+  // </Provider>
+
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header style={{flex: 2}} />
+        <Header style={{flex: 2}} state={this.state}/>
         <DisplayIndex onPress={this.onPressHandler}
           style={{flex: 1}} />
       </View>
     )
   }
+
 }
+
+export default HeaderDisplayIndex;
