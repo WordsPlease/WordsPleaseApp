@@ -13,6 +13,7 @@ class DisplayIndex extends Component {
   componentWillMount() {
     this.setState({list: TestData})
     this.renderList = this.renderList.bind(this)
+    this.props.onPress()
   }
 
   renderList() {
@@ -38,7 +39,6 @@ class DisplayIndex extends Component {
   render() {
 
     let listButtons = this.renderList();
-
     return (
       <View style={{flex: 2}}>
         <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>

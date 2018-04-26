@@ -18,14 +18,14 @@ class HeaderDisplayIndex extends Component {
   }
 
   onPressHandler() {
+    console.log(this.state)
     if (this.state.currentTileSet === "starter") {
       //based on onPress. Insert tile into activeStarter position if the tile is a starter
       this.setState({ activeStarter: {title: "starter"}, currentTileSet: "middle"})
     }
     else if (this.state.currentTileSet === "middle") {
-      let nextState = ""
       //check activeStarter to see if we are done, otherwise change to a finisher
-      this.setState({ activeMiddle: {title: "middle"}, currentTileSet: nextState})
+      this.setState({ activeMiddle: {title: "middle"}, currentTileSet: "finisher"})
     }
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: {title: "finisher"}, currentTileSet: "done"})

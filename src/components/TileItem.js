@@ -1,11 +1,14 @@
 import React from 'react';
+import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 
-const Tile = (props) => {
+// import Tile from './Tile';
+
+const DisplayDetail = (props) => {
   return (
     <TouchableOpacity style={styles.containerStyle}
       onPress={props.onPress}>
-      {props.children}
+      <Text>{props.item.title}</Text>
     </TouchableOpacity>
   )
 }
@@ -26,4 +29,11 @@ const styles = {
   }
 }
 
-export default Tile;
+// const styles = {
+//   displayDetail: {
+//     flexDirection: 'column',
+//     justifyContent: 'space-around'
+//   }
+// }
+
+export default DisplayDetail;

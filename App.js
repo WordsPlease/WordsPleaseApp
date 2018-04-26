@@ -16,10 +16,6 @@ import HeaderDisplayIndex from './src/components/HeaderDisplayIndex';
 // import Header from './src/components/Header';
 // import store from './src/store/store';
 
-//originally between the view
-// <Header style={{flex: 2}} />
-// <DisplayIndex onPress={this.onPressHandler}
-//   style={{flex: 1}} />
 type Props = {};
 export default class App extends Component {
 
