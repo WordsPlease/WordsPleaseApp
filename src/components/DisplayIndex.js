@@ -12,8 +12,8 @@ class DisplayIndex extends Component {
 
   componentWillMount() {
     this.setState({list: TestData})
-    this.renderList = this.renderList.bind(this)
   }
+  // this.renderList = this.renderList.bind(this)
 
   renderList() {
 
