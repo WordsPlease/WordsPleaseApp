@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.cpp \
-  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.h
+  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.cpp \
+  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/ReactCommon/privatedata/PrivateDataBase.h
