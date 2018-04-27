@@ -8,13 +8,15 @@ import TestData from './TestData';
 import TileItem from './TileItem';
 
 class TileIndex extends Component {
-  state = { list: [] };
+  // state = { list: [] };
 
   componentWillMount() {
     // this.setState({list: TestData})
     // this.props.onPress()
     this.renderList = this.renderList.bind(this)
     this.props.getStarters();
+    console.warn(this.props);
+    debugger
   }
 
   renderList() {
@@ -33,29 +35,30 @@ class TileIndex extends Component {
     // })
     //
     // renderList.push(renderSubList)
+    //
+    // let renderList = this.props.tiles;
+    // let renderSubList = []
+    //
+    // renderList.forEach((item, i) => {
+    //   if (i % 4 === 0 && i != 0) {
+    //     renderList.push(renderSubList)
+    //     renderSubList = []
+    //   }
+    //
+    //   renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+    //     onPress={this.props.onPress} />)
+    //
+    // })
+    //
+    // renderList.push(renderSubList)
 
-    let renderList = this.props.tiles;
-    let renderSubList = []
-
-    renderList.forEach((item, i) => {
-      if (i % 4 === 0 && i != 0) {
-        renderList.push(renderSubList)
-        renderSubList = []
-      }
-
-      renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-        onPress={this.props.onPress} />)
-
-    })
-
-    renderList.push(renderSubList)
-
-    return renderList
+    // return renderList
   }
 
   render() {
 
-    let listButtons = this.renderList();
+    // let listButtons = this.renderList();
+    let listButtons = [[],[]];
     return (
       <View style={{flex: 2}}>
         <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>

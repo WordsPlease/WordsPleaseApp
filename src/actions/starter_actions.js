@@ -11,7 +11,7 @@ export const RECEIVE_STARTERS = 'RECEIVE_STARTERS';
 
 const receiveStarters = (tiles) => ({
   type: RECEIVE_STARTERS,
-  tiles
+  tiles: tiles
 });
 //
 // export const getStarter = (id) => dispatch => (
