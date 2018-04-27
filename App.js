@@ -11,21 +11,19 @@ import {
   Text,
   View
 } from 'react-native';
-import DisplayIndex from './src/components/DisplayIndex';
-import HeaderContainer from './src/components/HeaderContainer';
-import store from './src/store/store';
+import HeaderDisplayIndex from './src/components/HeaderDisplayIndex';
+// import DisplayIndex from './src/components/DisplayIndex';
+// import Header from './src/components/Header';
+// import store from './src/store/store';
 
 type Props = {};
 export default class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
         <View style={{flex: 1}}>
-          <HeaderContainer style={{flex: 2}} />
-          <DisplayIndex style={{flex: 1}} />
+          <HeaderDisplayIndex />
         </View>
-      </Provider>
     );
   }
 }
