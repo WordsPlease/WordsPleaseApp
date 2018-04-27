@@ -37,13 +37,9 @@ class Main extends Component {
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
     }
-
-    console.warn(this.state);
+    console.log(this.state)
+    console.log(item)
   }
-
-  //back button will handle the reset state
-  // <Provider store={store}>
-  // </Provider>
 
   render() {
     return (

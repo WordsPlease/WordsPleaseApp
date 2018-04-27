@@ -19,7 +19,6 @@ class TileIndex extends Component {
   componentWillMount() {
     // this.setState({list: TestData})
     this.props.getStarters();
-
   }
 
   renderList() {
@@ -66,8 +65,6 @@ class TileIndex extends Component {
 
     let listButtons = this.renderList();
     // this.renderList();
-
-    // debugger
 
     return (
       <View style={{flex: 2}}>
