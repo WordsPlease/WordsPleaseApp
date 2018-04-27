@@ -14,6 +14,7 @@ import {
 import TileIndexContainer from './src/components/TileIndexContainer';
 import HeaderContainer from './src/components/HeaderContainer';
 import store from './src/store/store';
+import Main from './src/components/Main';
 
 type Props = {};
 export default class App extends Component {
@@ -22,8 +23,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <View style={{flex: 1}}>
-          <HeaderContainer style={{flex: 2}} />
-          <TileIndexContainer style={{flex: 1}} />
+          <Main />
         </View>
       </Provider>
     );
