@@ -5,14 +5,15 @@ import ReactNative, {
   StyleSheet
 } from 'react-native';
 import TestData from './TestData';
-import DisplayDetail from './DisplayDetail';
+import TileItem from './TileItem';
 
-class DisplayIndex extends Component {
+class TileIndex extends Component {
   state = { list: [] };
 
   componentWillMount() {
     this.setState({list: TestData})
     this.renderList = this.renderList.bind(this)
+    this.props.onPress()
   }
 
   renderList() {
@@ -25,7 +26,8 @@ class DisplayIndex extends Component {
         renderSubList = []
       }
 
-      renderSubList.push(<DisplayDetail style={styles.box} key={item.id} item={item} />)
+      renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+        onPress={this.props.onPress} />)
 
     })
 
@@ -37,7 +39,6 @@ class DisplayIndex extends Component {
   render() {
 
     let listButtons = this.renderList();
-
     return (
       <View style={{flex: 2}}>
         <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>
@@ -66,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DisplayIndex;
+export default TileIndex;
