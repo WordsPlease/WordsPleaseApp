@@ -1,5 +1,4 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
 import { connect } from 'react-redux';
 import { getSetting } from '../actions/setting_actions';
 import Header from './Header';
@@ -14,5 +13,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps,mapDispatchToProps)
-  (Setting);
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

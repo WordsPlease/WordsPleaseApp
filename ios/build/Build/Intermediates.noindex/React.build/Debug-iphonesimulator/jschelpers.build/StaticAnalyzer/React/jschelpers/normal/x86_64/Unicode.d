@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
-  /Users/appacademy/Desktop/WordsPleaseApp/node_modules/react-native/ReactCommon/jschelpers/Unicode.h
+  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/ReactCommon/jschelpers/Unicode.cpp \
+  /Users/solipsistice/Desktop/words-please.nosync/node_modules/react-native/ReactCommon/jschelpers/Unicode.h

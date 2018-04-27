@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import DisplayIndex from './src/components/DisplayIndex';
+import TileIndexContainer from './src/components/TileIndexContainer';
 import HeaderContainer from './src/components/HeaderContainer';
 import store from './src/store/store';
 
@@ -23,7 +23,7 @@ export default class App extends Component {
       <Provider store={store}>
         <View style={{flex: 1}}>
           <HeaderContainer style={{flex: 2}} />
-          <DisplayIndex style={{flex: 1}} />
+          <TileIndexContainer style={{flex: 1}} />
         </View>
       </Provider>
     );

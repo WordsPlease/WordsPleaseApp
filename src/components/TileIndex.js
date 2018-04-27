@@ -11,9 +11,9 @@ class TileIndex extends Component {
   state = { list: [] };
 
   componentWillMount() {
-    this.setState({list: TestData})
+    // this.setState({list: TestData})
+    // this.props.onPress()
     this.renderList = this.renderList.bind(this)
-    this.props.onPress()
     this.props.getStarters();
   }
 

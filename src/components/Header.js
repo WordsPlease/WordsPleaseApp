@@ -12,9 +12,6 @@ class Header extends Component {
 
   render() {
 
-    // console.log(this.props.fetchSetting(1));
-    console.warn(this.props);
-
     return(
     <View style={{flex: 2, flexDirection: 'row'}}>
       <View style={{flex: 1, backgroundColor: '#F8C471'}}></View>
