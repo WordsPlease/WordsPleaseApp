@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
   // getFinishers: (middleId, settingId) => dispatch(getFinishers(middleId, settingId))
 })
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   tiles: selectAllTiles(state),
   // activeTiles: state.activeTiles
 });
