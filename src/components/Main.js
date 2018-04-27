@@ -5,20 +5,18 @@ import {
   Text,
   View
 } from 'react-native';
-import TileIndex from './TileIndex';
-import Header from './Header';
+import TileIndexContainer from './TileIndexContainer';
+import HeaderContainer from './HeaderContainer';
 
-
-
-class Setting extends Component {
+class Main extends Component {
 
   constructor() {
     super()
-    this.onPressHandler = this.onPressHandler.bind(this);
+    this.setActiveTile = this.setActiveTile.bind(this);
     this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
   }
 
-  onPressHandler(item, e) {
+  setActiveTile(item, e) {
     if (typeof item === "undefined") {
       return null
     }
@@ -39,6 +37,8 @@ class Setting extends Component {
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
     }
+
+    console.warn(this.state);
   }
 
   //back button will handle the reset state
@@ -48,8 +48,8 @@ class Setting extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header style={{flex: 2}} activeTileState={this.state} />
-        <TileIndex onPress={this.onPressHandler}
+        <HeaderContainer style={{flex: 2}} activeTileState={this.state} />
+        <TileIndexContainer setTile={this.setActiveTile}
           style={{flex: 1}} />
       </View>
     )
@@ -57,4 +57,4 @@ class Setting extends Component {
 
 }
 
-export default Setting;
+export default Main;

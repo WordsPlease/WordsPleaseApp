@@ -13,21 +13,13 @@ class TileIndex extends Component {
   constructor(props){
     super(props)
     this.renderList = this.renderList.bind(this)
-    this.onPress = this.onPress.bind(this)
-  }
-
-  onPress(){
-    1+1
   }
 
 
   componentWillMount() {
     // this.setState({list: TestData})
-    this.onPress()
-
     this.props.getStarters();
 
-    debugger
   }
 
   renderList() {
@@ -41,7 +33,7 @@ class TileIndex extends Component {
       }
 
       renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-        onPress={this.onPress} />)
+        setTile={this.props.setTile} />)
       // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
       //   onPress={this.props.onPress} />)
 
@@ -74,6 +66,8 @@ class TileIndex extends Component {
 
     let listButtons = this.renderList();
     // this.renderList();
+
+    // debugger
 
     return (
       <View style={{flex: 2}}>
