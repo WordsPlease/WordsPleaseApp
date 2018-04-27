@@ -16,7 +16,7 @@ class Main extends Component {
     this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
   }
 
-  setActiveTile(item, e) {
+  setActiveTile(item) {
     if (typeof item === "undefined") {
       return null
     }
@@ -37,15 +37,17 @@ class Main extends Component {
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
     }
-    console.log(this.state)
-    console.log(item)
+
   }
 
   render() {
     return (
       <View style={{flex: 1}}>
         <HeaderContainer style={{flex: 2}} activeTileState={this.state} />
-        <TileIndexContainer setTile={this.setActiveTile}
+        <TileIndexContainer
+          setTile={this.setActiveTile}
+          currentTileSet={this.state.currentTileSet}
+          sentenceState={this.state}
           style={{flex: 1}} />
       </View>
     )

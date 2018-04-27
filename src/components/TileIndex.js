@@ -21,6 +21,14 @@ class TileIndex extends Component {
     this.props.getStarters();
   }
 
+  componentWillReceiveProps(props){
+    if (this.props.currentTileSet==='middle') {
+      this.props.getMiddles(this.props.sentenceState.activeStarter.id)
+    } else if (this.props.currentTileSet==='finisher') {
+      this.props.getFinishers(this.props.sentenceState.activeMiddle.id)
+    }
+  }
+
   renderList() {
 
     let renderList = []
@@ -31,7 +39,8 @@ class TileIndex extends Component {
         renderSubList = []
       }
 
-      renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+      renderSubList.push(<TileItem style={styles.box}
+        key={item.title} item={item}
         setTile={this.props.setTile} />)
       // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
       //   onPress={this.props.onPress} />)
