@@ -6,7 +6,10 @@ class Setting extends Component {
 
   // this.props.fetchSetting(1)
   componentWillMount(){
-    // this.setState({[]})
+    // console.log(this.props.getSetting);
+    // console.warn(this.props.getSetting(1));
+    this.props.getSetting(1)
+    // this.props.fetch();
   }
 
   render() {

@@ -43,7 +43,7 @@ class Setting extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Main style={{flex: 2}} state={this.state}/>
+        <ActiveTiles style={{flex: 2}} state={this.state}/>
         <TileIndex onPress={this.onPressHandler}
           style={{flex: 1}} />
       </View>
