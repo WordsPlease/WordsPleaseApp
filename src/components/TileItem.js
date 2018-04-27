@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 
 // import Tile from './Tile';
 
-const DisplayDetail = (props) => {
+const TileItem = (props) => {
   return (
     <TouchableOpacity style={styles.containerStyle}
       onPress={props.onPress}>
@@ -36,4 +36,4 @@ const styles = {
 //   }
 // }
 
-export default DisplayDetail;
+export default TileItem;

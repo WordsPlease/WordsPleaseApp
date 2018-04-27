@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import HeaderDisplayIndex from './src/components/HeaderDisplayIndex';
+import Main from './src/components/Main';
 // import DisplayIndex from './src/components/DisplayIndex';
 // import Header from './src/components/Header';
 // import store from './src/store/store';
@@ -22,7 +22,7 @@ export default class App extends Component {
   render() {
     return (
         <View style={{flex: 1}}>
-          <HeaderDisplayIndex />
+          <Main />
         </View>
     );
   }

@@ -5,11 +5,11 @@ import {
   Text,
   View
 } from 'react-native';
-import DisplayIndex from './DisplayIndex';
-import Header from './Header';
+import TileIndex from './TileIndex';
+import Main from './Main';
 
 
-class HeaderDisplayIndex extends Component {
+class Setting extends Component {
 
   constructor() {
     super()
@@ -25,7 +25,11 @@ class HeaderDisplayIndex extends Component {
     }
     else if (this.state.currentTileSet === "middle") {
       //check activeStarter to see if we are done, otherwise change to a finisher
-      this.setState({ activeMiddle: {title: "middle"}, currentTileSet: "finisher"})
+      let nextState = ""
+      if (this.state[activeMiddle].finishers.length !== 0) {
+        nextState = "finisher"
+      }
+      this.setState({ activeMiddle: {title: "middle"}, currentTileSet: nextState})
     }
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: {title: "finisher"}, currentTileSet: "done"})
@@ -39,8 +43,8 @@ class HeaderDisplayIndex extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header style={{flex: 2}} state={this.state}/>
-        <DisplayIndex onPress={this.onPressHandler}
+        <Main style={{flex: 2}} state={this.state}/>
+        <TileIndex onPress={this.onPressHandler}
           style={{flex: 1}} />
       </View>
     )
@@ -48,4 +52,4 @@ class HeaderDisplayIndex extends Component {
 
 }
 
-export default HeaderDisplayIndex;
+export default Setting;
