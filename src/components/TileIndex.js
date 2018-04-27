@@ -5,7 +5,7 @@ import ReactNative, {
   StyleSheet
 } from 'react-native';
 import TestData from './TestData';
-import TileItem from './DisplayDetail';
+import TileItem from './TileItem';
 
 class TileIndex extends Component {
   state = { list: [] };
