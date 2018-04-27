@@ -8,6 +8,7 @@ class ActiveTiles extends Component {
   }
 
   componentWillMount() {
+    
   }
 
   render() {

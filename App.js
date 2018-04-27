@@ -16,6 +16,7 @@ import Main from './src/components/Main';
 // import Header from './src/components/Header';
 // import store from './src/store/store';
 
+
 type Props = {};
 export default class App extends Component {
 
