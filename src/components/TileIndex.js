@@ -6,59 +6,75 @@ import ReactNative, {
 } from 'react-native';
 import TestData from './TestData';
 import TileItem from './TileItem';
+import size from 'lodash/size';
 
 class TileIndex extends Component {
   // state = { list: [] };
+  constructor(props){
+    super(props)
+    this.renderList = this.renderList.bind(this)
+    this.onPress = this.onPress.bind(this)
+  }
+
+  onPress(){
+    1+1
+  }
+
 
   componentWillMount() {
     // this.setState({list: TestData})
-    // this.props.onPress()
-    this.renderList = this.renderList.bind(this)
+    this.onPress()
+
     this.props.getStarters();
-    console.warn(this.props);
+
     debugger
   }
 
   renderList() {
 
-    // let renderList = []
-    // let renderSubList = []
-    // this.state.list.forEach((item, i) => {
-    //   if (i % 4 === 0 && i != 0) {
-    //     renderList.push(renderSubList)
-    //     renderSubList = []
-    //   }
-    //
-    //   renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-    //     onPress={this.props.onPress} />)
-    //
-    // })
-    //
-    // renderList.push(renderSubList)
-    //
-    // let renderList = this.props.tiles;
-    // let renderSubList = []
-    //
-    // renderList.forEach((item, i) => {
-    //   if (i % 4 === 0 && i != 0) {
-    //     renderList.push(renderSubList)
-    //     renderSubList = []
-    //   }
-    //
-    //   renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-    //     onPress={this.props.onPress} />)
-    //
-    // })
-    //
-    // renderList.push(renderSubList)
+    let renderList = []
+    let renderSubList = []
+    this.props.tiles.forEach((item, i) => {
+      if (i % 4 === 0 && i != 0) {
+        renderList.push(renderSubList)
+        renderSubList = []
+      }
 
-    // return renderList
+      renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+        onPress={this.onPress} />)
+      // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+      //   onPress={this.props.onPress} />)
+
+    })
+
+    renderList.push(renderSubList)
+
+    return renderList
+
+    // let count = 0
+    // this.props.tiles.map(i => {
+    //   count++
+    // })
+
+    // To come back to, for rendering null
+    // let toRender = []
+    // let subArr = []
+    // this.props.tiles.forEach(item, i) => {
+    //   subArr.push(item)
+    //   if ((i+ 1) % 4 === 0){
+    //     toRender.push(subArr)
+    //     subArr = []
+    //   }
+    // }
+
+
   }
 
   render() {
 
-    // let listButtons = this.renderList();
-    let listButtons = [[],[]];
+    let listButtons = this.renderList();
+    // this.renderList();
+
     return (
       <View style={{flex: 2}}>
         <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>
