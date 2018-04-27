@@ -22,11 +22,15 @@ const TestData = [
   },
   {
     id: 4,
-    title: 'Owner\'s Lap'
+    title: 'Owner\'s Lap',
+    finishers: [{
+      title: 'Sakamoto is the cutest'
+    }]
   },
   {
     id: 5,
-    title: 'Everything the owner is eating'
+    title: 'Everything the owner is eating',
+    finisher: []
   },
   {
     id: 6,
