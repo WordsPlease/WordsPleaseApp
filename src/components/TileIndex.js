@@ -14,13 +14,30 @@ class TileIndex extends Component {
     this.setState({list: TestData})
     this.renderList = this.renderList.bind(this)
     this.props.onPress()
+    this.props.getStarters();
   }
 
   renderList() {
 
-    let renderList = []
+    // let renderList = []
+    // let renderSubList = []
+    // this.state.list.forEach((item, i) => {
+    //   if (i % 4 === 0 && i != 0) {
+    //     renderList.push(renderSubList)
+    //     renderSubList = []
+    //   }
+    //
+    //   renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+    //     onPress={this.props.onPress} />)
+    //
+    // })
+    //
+    // renderList.push(renderSubList)
+
+    let renderList = this.props.tiles;
     let renderSubList = []
-    this.state.list.forEach((item, i) => {
+
+    renderList.forEach((item, i) => {
       if (i % 4 === 0 && i != 0) {
         renderList.push(renderSubList)
         renderSubList = []
