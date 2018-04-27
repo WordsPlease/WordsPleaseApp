@@ -5,9 +5,9 @@ import ReactNative, {
   StyleSheet
 } from 'react-native';
 import TestData from './TestData';
-import DisplayDetail from './DisplayDetail';
+import TileItem from './TileItem';
 
-class DisplayIndex extends Component {
+class TileIndex extends Component {
   state = { list: [] };
 
   componentWillMount() {
@@ -26,7 +26,7 @@ class DisplayIndex extends Component {
         renderSubList = []
       }
 
-      renderSubList.push(<DisplayDetail style={styles.box} key={item.id} item={item}
+      renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
         onPress={this.props.onPress} />)
 
     })
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DisplayIndex;
+export default TileIndex;

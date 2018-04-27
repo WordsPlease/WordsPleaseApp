@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import ActiveTiles from './ActiveTiles';
 
-class Header extends Component {
+class Setting extends Component {
 
   // this.props.fetchSetting(1)
   componentWillMount(){
@@ -25,7 +25,7 @@ class Header extends Component {
 }
 
 // <View style={{flex: 1, backgroundColor: '#F8C471'}} />
-export default Header;
+export default Setting;
 
 // const Header = (props) => {
 //   return (

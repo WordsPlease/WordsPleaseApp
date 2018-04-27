@@ -8,12 +8,12 @@ class ActiveTiles extends Component {
   }
 
   componentWillMount() {
-
   }
 
   render() {
+    console.log(this.props)
     return (
-      <View style={{flex: 2, backgroundColor: '#3498DB'}}>
+      <View style={{flex: 2, flexDirection: 'row', backgroundColor: '#3498DB'}}>
       </View>
     )
   }

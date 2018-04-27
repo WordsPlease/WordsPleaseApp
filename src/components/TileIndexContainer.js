@@ -5,7 +5,7 @@ import { getStarters } from '../actions/starter_actions';
 import { getMiddles } from '../actions/middle_actions';
 import { getFinishers } from '../actions/finisher_actions';
 // import Header from './Header';
-import DisplayIndex from './DisplayIndex.js'
+import TileIndex from './TileIndex.js'
 
 const mapDispatchToProps = (dispatch) => ({
   getStarters: () => dispatch(getStarters()),
@@ -20,4 +20,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DisplayIndex);
+)(TileIndex);
