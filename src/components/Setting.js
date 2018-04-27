@@ -6,23 +6,15 @@ class Header extends Component {
 
   // this.props.fetchSetting(1)
   componentWillMount(){
-<<<<<<< HEAD:src/components/Setting.js
-    // this.setState({[]})
-=======
     // console.log(this.props.getSetting);
     // console.warn(this.props.getSetting(1));
     this.props.getSetting(1)
     // this.props.fetch();
->>>>>>> master:src/components/Header.js
   }
 
   render() {
 
     // console.log(this.props.fetchSetting(1));
-<<<<<<< HEAD:src/components/Setting.js
-=======
-    console.warn(this.props);
->>>>>>> master:src/components/Header.js
 
     return(
     <View style={{flex: 2, flexDirection: 'row'}}>
