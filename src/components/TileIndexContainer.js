@@ -1,11 +1,10 @@
 import React from 'react';
-import { createStore } from 'redux';
 import { connect } from 'react-redux';
 import { getStarters } from '../actions/starter_actions';
 // import { getMiddles } from '../actions/middle_actions';
 // import { getFinishers } from '../actions/finisher_actions';
-
 import TileIndex from './TileIndex.js'
+import selectAllTiles from '../reducers/selectors'
 
 const mapDispatchToProps = (dispatch) => ({
   getStarters: () => dispatch(getStarters()),
@@ -14,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = state => ({
-  tiles: state.tiles,
+  tiles: selectAllTiles(state),
   // activeTiles: state.activeTiles
 });
 
