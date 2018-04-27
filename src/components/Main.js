@@ -16,7 +16,7 @@ class Main extends Component {
     this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
   }
 
-  setActiveTile(item, e) {
+  setActiveTile(item) {
     if (typeof item === "undefined") {
       return null
     }
@@ -38,7 +38,6 @@ class Main extends Component {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
     }
 
-    console.warn(this.state);
   }
 
   //back button will handle the reset state
@@ -49,7 +48,10 @@ class Main extends Component {
     return (
       <View style={{flex: 1}}>
         <HeaderContainer style={{flex: 2}} activeTileState={this.state} />
-        <TileIndexContainer setTile={this.setActiveTile}
+        <TileIndexContainer
+          setTile={this.setActiveTile}
+          currentTileSet={this.state.currentTileSet}
+          sentenceState={this.state}
           style={{flex: 1}} />
       </View>
     )
