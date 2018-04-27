@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 import TileIndex from './TileIndex';
-import Main from './Main';
+import Header from './Header';
 
 
 class Setting extends Component {
@@ -25,7 +25,8 @@ class Setting extends Component {
     }
     else if (this.state.currentTileSet === "middle") {
       //check activeStarter to see if we are done, otherwise change to a finisher
-      let nextState = ""
+      let nextState = "done"
+      //talk to Matthew about making this easier to call
       if (this.state[activeMiddle].finishers.length !== 0) {
         nextState = "finisher"
       }
@@ -43,7 +44,7 @@ class Setting extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <ActiveTiles style={{flex: 2}} state={this.state}/>
+        <Header style={{flex: 2}} state={this.state}/>
         <TileIndex onPress={this.onPressHandler}
           style={{flex: 1}} />
       </View>
