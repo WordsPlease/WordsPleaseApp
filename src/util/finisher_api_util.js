@@ -1,6 +1,6 @@
 export const fetchFinishers = (middleId, settingId) => {
   return (
-    fetch(`https://words-please.herokuapp.com/api/middles?starter_id=${starterId}`, {
+    fetch(`https://words-please.herokuapp.com/api/finishers/?middle_id=${middleId}&setting_id=${settingId}`, {
       method: 'GET'
     })
   )
