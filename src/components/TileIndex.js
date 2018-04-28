@@ -21,11 +21,19 @@ class TileIndex extends Component {
     this.props.getStarters();
   }
 
-  componentWillReceiveProps(props){
-    if (this.props.currentTileSet==='middle') {
-      this.props.getMiddles(this.props.sentenceState.activeStarter.id)
-    } else if (this.props.currentTileSet==='finisher') {
-      this.props.getFinishers(this.props.sentenceState.activeMiddle.id)
+  componentWillReceiveProps(nextProps){
+    // debugger
+    if (
+      this.props.sentenceState !== nextProps.sentenceState
+    ) {
+      if (this.props.currentTileSet==='middle') {
+        this.props.getMiddles(this.props.sentenceState.activeStarter.id)
+      } else if (this.props.currentTileSet==='finisher') {
+        this.props.getFinishers(this.props.sentenceState.activeMiddle.id, this.props.setting.id)
+      }
+      // else if (this.props.currentTileSet==='starter') {
+      //   this.props.getStarters();
+      // }
     }
   }
 
@@ -41,6 +49,7 @@ class TileIndex extends Component {
 
       renderSubList.push(<TileItem style={styles.box}
         key={item.title} item={item}
+        keyboardShouldPersistTaps='always'
         setTile={this.props.setTile} />)
       // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
       //   onPress={this.props.onPress} />)

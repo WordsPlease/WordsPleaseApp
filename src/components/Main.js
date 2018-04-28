@@ -13,26 +13,32 @@ class Main extends Component {
   constructor() {
     super()
     this.setActiveTile = this.setActiveTile.bind(this);
-    this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
+    this.state = {
+      activeStarter: {},
+      activeMiddle: {},
+      activeFinisher: {},
+      currentTileSet: "starter"
+    }
   }
 
-  setActiveTile(item) {
+  setActiveTile(item, e) {
     if (typeof item === "undefined") {
       return null
     }
+    debugger
 
     if (this.state.currentTileSet === "starter") {
       //based on onPress. Insert tile into activeStarter position if the tile is a starter
-      this.setState({ activeStarter: item, currentTileSet: "middle"})
+      this.setState({ activeStarter: item, currentTileSet: "middle"}, () => console.log(this.state))
     }
     else if (this.state.currentTileSet === "middle") {
       //check activeStarter to see if we are done, otherwise change to a finisher
-      let nextState = "done"
+      // let nextState = "done"
       //talk to Matthew about making this easier to call
       // if (item.finishers.length !== 0) {
       //   nextState = "finisher"
       // }
-      this.setState({ activeMiddle: item, currentTileSet: "finisher"})
+      this.setState({ activeMiddle: item, currentTileSet: "finisher"}, () => console.log(this.state))
     }
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
