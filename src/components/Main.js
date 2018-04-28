@@ -45,10 +45,6 @@ class Main extends Component {
 
   }
 
-  //back button will handle the reset state
-  // <Provider store={store}>
-  // </Provider>
-
   render() {
     return (
       <View style={{flex: 1}}>
