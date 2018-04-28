@@ -42,7 +42,6 @@ class Main extends Component {
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
     }
-
   }
 
   render() {

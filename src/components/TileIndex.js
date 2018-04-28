@@ -58,7 +58,7 @@ class TileIndex extends Component {
 
       while (renderSubList.length !== 4) {
         renderSubList.push(<TileItem style={styles.box} item={{title: ""}}
-        key={Math.random()}/>)
+        key={Math.random()} setTile={() => {}}/>)
       }
 
       renderList.push(renderSubList)
@@ -107,15 +107,16 @@ class TileIndex extends Component {
 
 }
 
-const styles = StyleSheet.create({
+// borderWidth: 1,
+// borderRadius: 2,
+// borderColor: 'black',
+// borderBottomWidth: 0,
+// borderRightWidth: 0,
+const styles = {
   box: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: 'black',
-    borderBottomWidth: 0,
-    borderRightWidth: 0,
-    flex: 1
+    flex: 1,
+    width: '25%'
   }
-});
+}
 
 export default TileIndex;

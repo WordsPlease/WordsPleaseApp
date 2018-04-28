@@ -25,8 +25,8 @@ class ActiveTiles extends Component {
       }
       if (currentTile.title != "") {
         renderedSentence += currentTile.title + ' '
-        renderedArray.push(  <TileItem setTile={() => { console.log("don't touch me") } }
-        item={currentTile} key={currentTile.title} /> )
+        renderedArray.push(<TileItem setTile={() => { console.log("don't touch me") } }
+        item={currentTile} key={currentTile.title} style={styles.tiles} /> )
       }
     }
     renderedSet.push(renderedSentence)
@@ -40,13 +40,28 @@ class ActiveTiles extends Component {
   render() {
     let activeSet = this.renderingTiles();
     return (
-      <View style={{flex: 1, flexDirection: 'column' }}>
+      <View style={styles.activeTilesContainer}>
         <Text>{activeSet[0]}</Text>
         <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#3498DB'}}>
           {activeSet[1]}
         </View>
       </View>
     )
+  }
+}
+
+const styles = {
+  tiles: {
+    width: '33%',
+  },
+  activeTilesContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    marginTop: 50,
+    marginBottom: 50,
+    marginRight: 70,
+    marginLeft: 70,
+    backgroundColor: '#3498DB',
   }
 }
 

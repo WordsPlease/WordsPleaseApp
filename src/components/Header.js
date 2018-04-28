@@ -14,11 +14,10 @@ class Header extends Component {
   render() {
 
     return(
-    <View style={{flex: 2, flexDirection: 'row'}}>
+    <View style={{flex: 2, flexDirection: 'row', backgroundColor: '#ddd'}}>
 
-      <ActiveTiles style={{flex: 2, backgroundColor: '#3498DB'}}
+      <ActiveTiles
         activeTileState={this.props.activeTileState} />
-      <View style={{flex: 1, backgroundColor: '#F8C471'}} />
     </View>
   )}
 }
@@ -39,3 +38,9 @@ export default Header;
 //     </View>
 //   )
 // }
+
+const styles = {
+  margin: '20px',
+  backgroundColor: '#3498DB',
+
+}
