@@ -47,7 +47,7 @@ class Main extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <HeaderContainer style={{flex: 2}} activeTileState={this.state} />
+        <HeaderContainer style={{flex: 4}} activeTileState={this.state} />
         <TileIndexContainer
           setTile={this.setActiveTile}
           currentTileSet={this.state.currentTileSet}
