@@ -14,9 +14,9 @@ class Main extends Component {
     super()
     this.setActiveTile = this.setActiveTile.bind(this);
     this.state = {
-      activeStarter: {},
-      activeMiddle: {},
-      activeFinisher: {},
+      activeStarter: {title: ""},
+      activeMiddle: {title: ""},
+      activeFinisher: {title: ""},
       currentTileSet: "starter"
     }
   }
