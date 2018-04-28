@@ -15,6 +15,7 @@ class Header extends Component {
 
     return(
     <View style={{flex: 2, flexDirection: 'row'}}>
+
       <ActiveTiles style={{flex: 2, backgroundColor: '#3498DB'}}
         activeTileState={this.props.activeTileState} />
       <View style={{flex: 1, backgroundColor: '#F8C471'}} />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import TileItem from './TileItem'
 
 class ActiveTiles extends Component {
@@ -13,7 +13,9 @@ class ActiveTiles extends Component {
   }
 
   renderingTiles() {
-    renderedArray = [];
+    let renderedSet = []
+    let renderedSentence = ""
+    let renderedArray = [];
     let activeState = this.props.activeTileState
     let activeStateKeys = Object.keys(activeState)
     for (i = 0; i < activeStateKeys.length; i++) {
@@ -21,19 +23,28 @@ class ActiveTiles extends Component {
       if (activeStateKeys[i] === 'currentTileSet') {
         continue
       }
-      if (currentTile.title) {
+      if (currentTile.title != "") {
+        renderedSentence += currentTile.title + ' '
         renderedArray.push(  <TileItem setTile={() => { console.log("don't touch me") } }
-        item={currentTile} />)
+        item={currentTile} key={currentTile.title} /> )
       }
     }
-    return renderedArray
+    renderedSet.push(renderedSentence)
+    renderedSet.push(renderedArray)
+    return renderedSet
+
   }
 
+
+
   render() {
-    let activeTiles = this.renderingTiles();
+    let activeSet = this.renderingTiles();
     return (
-      <View style={{flex: 2, flexDirection: 'row', backgroundColor: '#3498DB'}}>
-        {activeTiles}
+      <View style={{flex: 1, flexDirection: 'column' }}>
+        <Text>{activeSet[0]}</Text>
+        <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#3498DB'}}>
+          {activeSet[1]}
+        </View>
       </View>
     )
   }

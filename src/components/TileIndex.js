@@ -41,24 +41,30 @@ class TileIndex extends Component {
 
     let renderList = []
     let renderSubList = []
-    this.props.tiles.forEach((item, i) => {
-      if (i % 4 === 0 && i != 0) {
-        renderList.push(renderSubList)
-        renderSubList = []
+      this.props.tiles.forEach((item, i) => {
+        if (i % 4 === 0 && i != 0) {
+          renderList.push(renderSubList)
+          renderSubList = []
+        }
+
+        renderSubList.push(<TileItem style={styles.box}
+          key={item.title} item={item}
+          keyboardShouldPersistTaps='always'
+          setTile={this.props.setTile} />)
+        // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+        //   onPress={this.props.onPress} />)
+
+      })
+
+      while (renderSubList.length !== 4) {
+        renderSubList.push(<TileItem style={styles.box} item={{title: ""}}
+        key={Math.random()}/>)
       }
 
-      renderSubList.push(<TileItem style={styles.box}
-        key={item.title} item={item}
-        keyboardShouldPersistTaps='always'
-        setTile={this.props.setTile} />)
-      // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-      //   onPress={this.props.onPress} />)
-
-    })
-
-    renderList.push(renderSubList)
+      renderList.push(renderSubList)
 
     return renderList
+
 
     // let count = 0
     // this.props.tiles.map(i => {
