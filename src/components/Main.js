@@ -14,9 +14,9 @@ class Main extends Component {
     super()
     this.setActiveTile = this.setActiveTile.bind(this);
     this.state = {
-      activeStarter: {},
-      activeMiddle: {},
-      activeFinisher: {},
+      activeStarter: {title: ""},
+      activeMiddle: {title: ""},
+      activeFinisher: {title: ""},
       currentTileSet: "starter"
     }
   }
@@ -25,7 +25,6 @@ class Main extends Component {
     if (typeof item === "undefined") {
       return null
     }
-    debugger
 
     if (this.state.currentTileSet === "starter") {
       //based on onPress. Insert tile into activeStarter position if the tile is a starter
@@ -45,10 +44,6 @@ class Main extends Component {
     }
 
   }
-
-  //back button will handle the reset state
-  // <Provider store={store}>
-  // </Provider>
 
   render() {
     return (

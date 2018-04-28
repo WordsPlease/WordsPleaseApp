@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
+import ActiveTiles from './ActiveTiles'
 
 class Header extends Component {
 
@@ -14,9 +15,9 @@ class Header extends Component {
 
     return(
     <View style={{flex: 2, flexDirection: 'row'}}>
-      <View style={{flex: 1, backgroundColor: '#F8C471'}}></View>
-      <View style={{flex: 1, backgroundColor: '#EC7063'}}/>
-      <View style={{flex: 1, backgroundColor: '#3498DB'}} />
+      <ActiveTiles style={{flex: 2, backgroundColor: '#3498DB'}}
+        activeTileState={this.props.activeTileState} />
+      <View style={{flex: 1, backgroundColor: '#F8C471'}} />
     </View>
   )}
 }
