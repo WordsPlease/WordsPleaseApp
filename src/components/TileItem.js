@@ -3,9 +3,10 @@ import { Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 
 const TileItem = (props) => {
+
   return (
     <TouchableOpacity style={styles.containerStyle}
-      onPress={props.onPress.bind(this, props.item)}>
+      onPress={(e) => props.setTile(props.item, e)}>
       <Text>{props.item.title}</Text>
     </TouchableOpacity>
   )

@@ -6,39 +6,85 @@ import ReactNative, {
 } from 'react-native';
 import TestData from './TestData';
 import TileItem from './TileItem';
+import size from 'lodash/size';
 
 class TileIndex extends Component {
-  state = { list: [] };
+  // state = { list: [] };
+  constructor(props){
+    super(props)
+    this.renderList = this.renderList.bind(this)
+  }
+
 
   componentWillMount() {
-    this.setState({list: TestData})
-    this.renderList = this.renderList.bind(this)
-    this.props.onPress()
+    // this.setState({list: TestData})
+    this.props.getStarters();
+
+  }
+
+  componentWillReceiveProps(nextProps){
+    // debugger
+    if (
+      this.props.sentenceState !== nextProps.sentenceState
+    ) {
+      if (this.props.currentTileSet==='middle') {
+        this.props.getMiddles(this.props.sentenceState.activeStarter.id)
+      } else if (this.props.currentTileSet==='finisher') {
+        this.props.getFinishers(this.props.sentenceState.activeMiddle.id, this.props.setting.id)
+      }
+      // else if (this.props.currentTileSet==='starter') {
+      //   this.props.getStarters();
+      // }
+    }
   }
 
   renderList() {
 
     let renderList = []
     let renderSubList = []
-    this.state.list.forEach((item, i) => {
+    this.props.tiles.forEach((item, i) => {
       if (i % 4 === 0 && i != 0) {
         renderList.push(renderSubList)
         renderSubList = []
       }
 
-      renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-        onPress={this.props.onPress} />)
+      renderSubList.push(<TileItem style={styles.box}
+        key={item.title} item={item}
+        keyboardShouldPersistTaps='always'
+        setTile={this.props.setTile} />)
+      // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+      //   onPress={this.props.onPress} />)
 
     })
 
     renderList.push(renderSubList)
 
     return renderList
+
+    // let count = 0
+    // this.props.tiles.map(i => {
+    //   count++
+    // })
+
+    // To come back to, for rendering null
+    // let toRender = []
+    // let subArr = []
+    // this.props.tiles.forEach(item, i) => {
+    //   subArr.push(item)
+    //   if ((i+ 1) % 4 === 0){
+    //     toRender.push(subArr)
+    //     subArr = []
+    //   }
+    // }
+
+
   }
 
   render() {
 
     let listButtons = this.renderList();
+    // this.renderList();
+
     return (
       <View style={{flex: 2}}>
         <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>

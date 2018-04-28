@@ -5,40 +5,45 @@ import {
   Text,
   View
 } from 'react-native';
-import TileIndex from './TileIndex';
-import Header from './Header';
+import TileIndexContainer from './TileIndexContainer';
+import HeaderContainer from './HeaderContainer';
 
-
-
-class Setting extends Component {
+class Main extends Component {
 
   constructor() {
     super()
-    this.onPressHandler = this.onPressHandler.bind(this);
-    this.state = { activeStarter: {}, activeMiddle: {}, activeFinisher: {}, currentTileSet: "starter" }
+    this.setActiveTile = this.setActiveTile.bind(this);
+    this.state = {
+      activeStarter: {},
+      activeMiddle: {},
+      activeFinisher: {},
+      currentTileSet: "starter"
+    }
   }
 
-  onPressHandler(item, e) {
+  setActiveTile(item, e) {
     if (typeof item === "undefined") {
       return null
     }
+    debugger
 
     if (this.state.currentTileSet === "starter") {
       //based on onPress. Insert tile into activeStarter position if the tile is a starter
-      this.setState({ activeStarter: item, currentTileSet: "middle"})
+      this.setState({ activeStarter: item, currentTileSet: "middle"}, () => console.log(this.state))
     }
     else if (this.state.currentTileSet === "middle") {
       //check activeStarter to see if we are done, otherwise change to a finisher
-      let nextState = "done"
+      // let nextState = "done"
       //talk to Matthew about making this easier to call
       // if (item.finishers.length !== 0) {
       //   nextState = "finisher"
       // }
-      this.setState({ activeMiddle: item, currentTileSet: "finisher"})
+      this.setState({ activeMiddle: item, currentTileSet: "finisher"}, () => console.log(this.state))
     }
     else if (this.state.currentTileSet === "finisher") {
       this.setState({ activeFinisher: item, currentTileSet: "done"})
     }
+
   }
 
   //back button will handle the reset state
@@ -48,8 +53,11 @@ class Setting extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Header style={{flex: 2}} activeTileState={this.state} />
-        <TileIndex onPress={this.onPressHandler}
+        <HeaderContainer style={{flex: 2}} activeTileState={this.state} />
+        <TileIndexContainer
+          setTile={this.setActiveTile}
+          currentTileSet={this.state.currentTileSet}
+          sentenceState={this.state}
           style={{flex: 1}} />
       </View>
     )
@@ -57,4 +65,4 @@ class Setting extends Component {
 
 }
 
-export default Setting;
+export default Main;

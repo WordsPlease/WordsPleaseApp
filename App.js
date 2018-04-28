@@ -11,10 +11,10 @@ import {
   Text,
   View
 } from 'react-native';
+import TileIndexContainer from './src/components/TileIndexContainer';
+import HeaderContainer from './src/components/HeaderContainer';
+import store from './src/store/store';
 import Main from './src/components/Main';
-// import DisplayIndex from './src/components/DisplayIndex';
-// import Header from './src/components/Header';
-// import store from './src/store/store';
 
 
 type Props = {};
@@ -22,9 +22,11 @@ export default class App extends Component {
 
   render() {
     return (
+      <Provider store={store}>
         <View style={{flex: 1}}>
           <Main />
         </View>
+      </Provider>
     );
   }
 }
