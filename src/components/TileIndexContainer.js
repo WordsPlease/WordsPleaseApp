@@ -15,7 +15,6 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => ({
   tiles: selectAllTiles(state),
   setting: state.setting
-  // activeTiles: state.activeTiles
 });
 
 export default connect(
