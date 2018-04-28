@@ -25,7 +25,6 @@ class Main extends Component {
     if (typeof item === "undefined") {
       return null
     }
-    debugger
 
     if (this.state.currentTileSet === "starter") {
       //based on onPress. Insert tile into activeStarter position if the tile is a starter
