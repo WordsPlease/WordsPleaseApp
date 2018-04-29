@@ -16,12 +16,15 @@ class Header extends Component {
   }
 
   changeSetting() {
-    this.props.setting.id === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+    if (this.props.activeTileState.currentTileSet === "starter") {
+      this.props.setting.id === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+    } else {
+      console.warn("Starter onleh")
+    }
   }
 
   render() {
-    console.log(this.props.setting)
-    let color = this.props.setting.id === 1 ? '#ddd' : '#F8C471'
+    let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
     return(
     <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
       <ToggleSetting changeSetting={this.changeSetting}/>
