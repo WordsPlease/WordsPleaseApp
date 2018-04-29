@@ -31,6 +31,15 @@ class TileIndex extends Component {
         this.props.getStarters();
       }
     }
+    if (nextProps.setting !== this.props.setting) {
+      if (nextProps.currentTile === 'middle') {
+        this.props.getMiddles(nextProps.sentenceState.activeStarter.id)
+      } else if (nextProps.currentTileSet==='finisher') {
+        this.props.getFinishers(nextProps.sentenceState.activeMiddle.id, this.props.setting.id)
+      } else if (nextProps.currentTileSet==='starter') {
+        this.props.getStarters();
+      }
+    }
   }
 
   renderList() {

@@ -16,11 +16,11 @@ class Header extends Component {
   }
 
   changeSetting() {
-    if (this.props.activeTileState.currentTileSet === "starter") {
-      this.props.setting[0] === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
-    } else {
-      // console.warn("Starter onleh")
-    }
+    // if (this.props.activeTileState.currentTileSet === "starter") {
+    //   this.props.setting[0] === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+    // }
+    this.props.setting[0] === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+
   }
 
   render() {
