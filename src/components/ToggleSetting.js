@@ -9,7 +9,8 @@ class ToggleSetting extends Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={this.props.changeSetting}>
+      <TouchableOpacity onPress={this.props.changeSetting}
+        style={styles}>
         <Text>ToggleSetting</Text>
       </TouchableOpacity>
     )
@@ -17,3 +18,13 @@ class ToggleSetting extends Component {
 }
 
 export default ToggleSetting;
+
+const styles = {
+  width: 100,
+  height: 40,
+  backgroundColor: '#FBFCFC',
+  borderWidth: 1,
+  borderRadius: 2,
+  borderColor: '#17202A',
+  paddingTop: 10
+}
