@@ -36,20 +36,24 @@ class Header extends Component {
       <ImageBackground style={{width: '100%', height: '100%', position: 'absolute'}} source={{uri: this.props.setting[2]}}/>
     }
 
-
+//this is the forward and backward functionality
+    // <View>
+    //   <Text style={{flex:1}} onPress={this.props.pageButtonHandler.bind(this, "back", Object.keys(this.props.tiles).length)}>Back</Text>
+    //   <Text style={{flex:1}} onPress={this.props.pageButtonHandler.bind(this, "forward", Object.keys(this.props.tiles).length)}>Forward</Text>
+    // </View>
 
     return(
-    <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
+    <View style={{flex: 3}}>
       {bg}
-      <ToggleSetting
-        changeSetting={this.changeSetting}/>
-      <BackButton
-        onPressHandler={this.props.onPressHandler}/>
-      <ActiveTiles
-        activeTileState={this.props.activeTileState} />
-      <View>
-        <Text style={{flex:1}} onPress={this.props.pageButtonHandler.bind(this, "back", Object.keys(this.props.tiles).length)}>Back</Text>
-        <Text style={{flex:1}} onPress={this.props.pageButtonHandler.bind(this, "forward", Object.keys(this.props.tiles).length)}>Forward</Text>
+      <View style={styles.buttons}>
+        <BackButton
+          onPressHandler={this.props.onPressHandler}/>
+        <ToggleSetting
+          changeSetting={this.changeSetting}/>
+      </View>
+      <View style={{flexDirection: 'row', flex: 1}}>
+        <ActiveTiles
+          activeTileState={this.props.activeTileState} />
       </View>
     </View>
   )}
@@ -74,7 +78,12 @@ export default Header;
 // }
 
 const styles = {
-  margin: '20px',
-  backgroundColor: '#3498DB',
+  buttons: {
+    marginTop: 0,
+    marginBottom: 0,
+    marginLeft: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
 
+  }
 }

@@ -9,7 +9,7 @@ class BackButton extends Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={this.props.onPressHandler}>
+      <TouchableOpacity style={styles} onPress={this.props.onPressHandler}>
         <Text>Back</Text>
       </TouchableOpacity>
     )
@@ -17,3 +17,13 @@ class BackButton extends Component {
 }
 
 export default BackButton;
+
+const styles = {
+  width: 40,
+  height: 40,
+  backgroundColor: '#FBFCFC',
+  borderWidth: 1,
+  borderRadius: 2,
+  borderColor: '#17202A',
+  paddingTop: 10
+}

@@ -43,7 +43,7 @@ class ActiveTiles extends Component {
     return (
       <View style={styles.activeTilesContainer}>
         <Text>{activeSet[0]}</Text>
-        <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#3498DB'}}>
+        <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#ddd'}}>
           {activeSet[1]}
         </View>
       </View>
@@ -54,15 +54,18 @@ class ActiveTiles extends Component {
 const styles = {
   tiles: {
     width: '33%',
+    marginRight: 1,
   },
   activeTilesContainer: {
     flex: 1,
     flexDirection: 'column',
-    marginTop: 50,
-    marginBottom: 50,
-    marginRight: 70,
-    marginLeft: 70,
-    backgroundColor: '#3498DB',
+    marginTop: 10,
+    marginBottom: 30,
+    marginRight: '25%',
+    marginLeft: '25%',
+    backgroundColor: '#ddd',
+    borderWidth: 1,
+    borderColor: '#17202A'
   }
 }
 

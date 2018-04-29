@@ -23,6 +23,7 @@ const styles = {
     marginTop: 0,
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    backgroundColor: '#FBFCFC'
   }
 }
 
