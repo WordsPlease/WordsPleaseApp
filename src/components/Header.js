@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, ImageBackground, Text } from 'react-native';
 import ActiveTiles from './ActiveTiles';
 import BackButton from './BackButton';
 import ToggleSetting from './ToggleSetting';
@@ -11,26 +11,40 @@ class Header extends Component {
     this.changeSetting = this.changeSetting.bind(this);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.getSetting(1)
   }
 
   changeSetting() {
     if (this.props.activeTileState.currentTileSet === "starter") {
-      this.props.setting.id === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+      this.props.setting[0] === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
     } else {
       console.warn("Starter onleh")
     }
   }
 
   render() {
-    console.log(this.props.activeTileState)
+    // console.log(this.props.activeTileState)
     let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
-    // <Image style={{flex: 1}} source={{uri: this.props.setting.image_path}} />
+
+    console.warn(this.props.setting);
+
+    let bg = null
+
+    if (this.props.setting[2]) {
+      bg =
+      <ImageBackground style={{width: '100%', height: '100%', position: 'absolute'}} source={{uri: this.props.setting[2]}}/>
+    }
+
+
+
     return(
     <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
-      <ToggleSetting changeSetting={this.changeSetting}/>
-      <BackButton onPressHandler={this.props.onPressHandler}/>
+      {bg}
+      <ToggleSetting
+        changeSetting={this.changeSetting}/>
+      <BackButton
+        onPressHandler={this.props.onPressHandler}/>
       <ActiveTiles
         activeTileState={this.props.activeTileState} />
       <View>

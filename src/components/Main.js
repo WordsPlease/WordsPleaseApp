@@ -85,8 +85,10 @@ class Main extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <HeaderContainer style={{flex: 4}} onPressHandler={this.onPressHandler}
-          activeTileState={this.state} pageButtonHandler={this.changeTilePageNumber} />
+        <HeaderContainer style={{flex: 4}}
+          onPressHandler={this.onPressHandler}
+          activeTileState={this.state}
+          pageButtonHandler={this.changeTilePageNumber} />
         <TileIndexContainer
           setTile={this.setActiveTile}
           currentTileSet={this.state.currentTileSet}
