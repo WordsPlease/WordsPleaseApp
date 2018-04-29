@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ActiveTiles from './ActiveTiles'
+import ActiveTiles from './ActiveTiles';
+import BackButton from './BackButton';
 
 class Header extends Component {
 
@@ -12,12 +13,11 @@ class Header extends Component {
   }
 
   render() {
-
     return(
-    <View style={{flex: 2, flexDirection: 'row'}}>
-      <ActiveTiles style={{flex: 2, backgroundColor: '#3498DB'}}
+    <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#ddd'}}>
+      <BackButton onPressHandler={this.props.onPressHandler}/>
+      <ActiveTiles
         activeTileState={this.props.activeTileState} />
-      <View style={{flex: 1, backgroundColor: '#F8C471'}} />
     </View>
   )}
 }
@@ -38,3 +38,9 @@ export default Header;
 //     </View>
 //   )
 // }
+
+const styles = {
+  margin: '20px',
+  backgroundColor: '#3498DB',
+
+}
