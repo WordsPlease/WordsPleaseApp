@@ -1,5 +1,6 @@
+import Tts from 'react-native-tts';
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import TileItem from './TileItem'
 
 class ActiveTiles extends Component {
@@ -40,10 +41,19 @@ class ActiveTiles extends Component {
 
   render() {
     let activeSet = this.renderingTiles();
+
     return (
       <View style={styles.activeTilesContainer}>
-        <Text>{activeSet[0]}</Text>
-        <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#ddd'}}>
+        <TouchableOpacity
+          onPress={()=> {
+            Tts.speak(activeSet[0], { iosVoiceId: 'com.apple.ttsbundle.Samantha-compact' })
+          }}>
+          <Text>
+            {activeSet[0]}
+          </Text>
+        </TouchableOpacity>
+        <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#3498DB'}}>
+
           {activeSet[1]}
         </View>
       </View>

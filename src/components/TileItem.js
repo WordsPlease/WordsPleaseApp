@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, Image, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 
 const TileItem = (props) => {
   return (
     <TouchableOpacity style={[styles.containerStyle, props.style]} key={props.innerKey}
       onPress={(e) => props.setTile(props.item, e)}>
+      <Image source={{uri: 'No'}} style={{width: 40, height: 40}}/>
       <Text>{props.item.title}</Text>
     </TouchableOpacity>
   )
@@ -21,9 +22,9 @@ const styles = {
     marginLeft: 0,
     marginRight: 0,
     marginTop: 0,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    backgroundColor: '#FBFCFC'
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'center',
   }
 }
 
