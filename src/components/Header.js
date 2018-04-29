@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ActiveTiles from './ActiveTiles'
+import ActiveTiles from './ActiveTiles';
+import BackButton from './BackButton';
 
 class Header extends Component {
 
@@ -12,10 +13,9 @@ class Header extends Component {
   }
 
   render() {
-
     return(
     <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#ddd'}}>
-
+      <BackButton onPressHandler={this.props.onPressHandler}/>
       <ActiveTiles
         activeTileState={this.props.activeTileState} />
     </View>

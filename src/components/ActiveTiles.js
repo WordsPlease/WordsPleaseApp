@@ -8,8 +8,8 @@ class ActiveTiles extends Component {
     super(props)
   }
 
-  componentWillMount() {
-
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps)
   }
 
   renderingTiles() {

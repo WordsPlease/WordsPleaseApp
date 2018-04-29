@@ -4,7 +4,6 @@ import ReactNative, {
   View,
   StyleSheet
 } from 'react-native';
-import TestData from './TestData';
 import TileItem from './TileItem';
 import size from 'lodash/size';
 
@@ -23,18 +22,15 @@ class TileIndex extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if (
-      this.props.sentenceState !== nextProps.sentenceState
-    ) {
+
       if (nextProps.currentTileSet==='middle') {
         this.props.getMiddles(nextProps.sentenceState.activeStarter.id)
       } else if (nextProps.currentTileSet==='finisher') {
         this.props.getFinishers(nextProps.sentenceState.activeMiddle.id, this.props.setting.id)
       }
-      // else if (this.props.currentTileSet==='starter') {
-      //   this.props.getStarters();
-      // }
-    }
+      else if (this.props.currentTileSet==='starter') {
+        this.props.getStarters();
+      }
   }
 
   renderList() {
