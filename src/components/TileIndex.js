@@ -4,7 +4,6 @@ import ReactNative, {
   View,
   StyleSheet
 } from 'react-native';
-import TestData from './TestData';
 import TileItem from './TileItem';
 import size from 'lodash/size';
 
@@ -23,17 +22,15 @@ class TileIndex extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if (
-      this.props.sentenceState !== nextProps.sentenceState
-    ) {
+    if (nextProps.currentTileSet !== this.props.currentTileSet) {
       if (nextProps.currentTileSet==='middle') {
         this.props.getMiddles(nextProps.sentenceState.activeStarter.id)
       } else if (nextProps.currentTileSet==='finisher') {
         this.props.getFinishers(nextProps.sentenceState.activeMiddle.id, this.props.setting.id)
       }
-      // else if (this.props.currentTileSet==='starter') {
-      //   this.props.getStarters();
-      // }
+      else if (nextProps.currentTileSet==='starter') {
+        this.props.getStarters();
+      }
     }
   }
 
@@ -41,24 +38,30 @@ class TileIndex extends Component {
 
     let renderList = []
     let renderSubList = []
-    this.props.tiles.forEach((item, i) => {
-      if (i % 4 === 0 && i != 0) {
-        renderList.push(renderSubList)
-        renderSubList = []
+      this.props.tiles.forEach((item, i) => {
+        if (i % 4 === 0 && i != 0) {
+          renderList.push(renderSubList)
+          renderSubList = []
+        }
+
+        renderSubList.push(<TileItem style={styles.box}
+          key={item.title} item={item}
+          keyboardShouldPersistTaps='always'
+          setTile={this.props.setTile} />)
+        // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
+        //   onPress={this.props.onPress} />)
+
+      })
+
+      while (renderSubList.length !== 4) {
+        renderSubList.push(<TileItem style={styles.box} item={{title: ""}}
+        key={Math.random()} setTile={() => {}}/>)
       }
 
-      renderSubList.push(<TileItem style={styles.box}
-        key={item.title} item={item}
-        keyboardShouldPersistTaps='always'
-        setTile={this.props.setTile} />)
-      // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
-      //   onPress={this.props.onPress} />)
-
-    })
-
-    renderList.push(renderSubList)
+      renderList.push(renderSubList)
 
     return renderList
+
 
     // let count = 0
     // this.props.tiles.map(i => {
@@ -101,15 +104,16 @@ class TileIndex extends Component {
 
 }
 
-const styles = StyleSheet.create({
+// borderWidth: 1,
+// borderRadius: 2,
+// borderColor: 'black',
+// borderBottomWidth: 0,
+// borderRightWidth: 0,
+const styles = {
   box: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: 'black',
-    borderBottomWidth: 0,
-    borderRightWidth: 0,
-    flex: 1
+    flex: 1,
+    width: '25%'
   }
-});
+}
 
 export default TileIndex;

@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ActiveTiles from './ActiveTiles'
+import ActiveTiles from './ActiveTiles';
+import BackButton from './BackButton';
+import ToggleSetting from './ToggleSetting';
 
 class Header extends Component {
 
+  constructor(props) {
+    super(props)
+    this.changeSetting = this.changeSetting.bind(this);
+  }
+
   componentWillMount(){
-    // console.log(this.props.getSetting);
-    // console.warn(this.props.getSetting(1));
     this.props.getSetting(1)
-    // this.props.fetch();
+  }
+
+  changeSetting() {
+    if (this.props.activeTileState.currentTileSet === "starter") {
+      this.props.setting.id === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+    } else {
+      console.warn("Starter onleh")
+    }
   }
 
   render() {
-
+    let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
     return(
-    <View style={{flex: 2, flexDirection: 'row'}}>
-      <ActiveTiles style={{flex: 2, backgroundColor: '#3498DB'}}
+    <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
+      <ToggleSetting changeSetting={this.changeSetting}/>
+      <BackButton onPressHandler={this.props.onPressHandler}/>
+      <ActiveTiles
         activeTileState={this.props.activeTileState} />
-      <View style={{flex: 1, backgroundColor: '#F8C471'}} />
     </View>
   )}
 }
@@ -38,3 +51,9 @@ export default Header;
 //     </View>
 //   )
 // }
+
+const styles = {
+  margin: '20px',
+  backgroundColor: '#3498DB',
+
+}

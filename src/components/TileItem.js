@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native';
 const TileItem = (props) => {
 
   return (
-    <TouchableOpacity style={styles.containerStyle}
+    <TouchableOpacity style={[styles.containerStyle, props.style]} key={props.key}
       onPress={(e) => props.setTile(props.item, e)}>
       <Text>{props.item.title}</Text>
     </TouchableOpacity>
@@ -24,7 +24,6 @@ const styles = {
     marginTop: 0,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    width: '25%'
   }
 }
 
