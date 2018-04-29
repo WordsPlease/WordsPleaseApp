@@ -36,15 +36,18 @@ class TileIndex extends Component {
   renderList() {
 
     let renderList = []
-    let renderSubList = []
-      this.props.tiles.forEach((item, i) => {
+     let renderSubList = []
+    // let startingIndexNumber = (this.props.pageNumber * 8 > this.props.tiles.length) ? (parseInt(this.props.tiles.length/8) * 8  : this.props.pageNumber * 8
+    let startingIndex =
+      this.props.tiles.slice(this.props.pageNumber*8, this.props.tiles.length)
+        .forEach((item, i) => {
         if (i % 4 === 0 && i != 0) {
           renderList.push(renderSubList)
           renderSubList = []
         }
 
         renderSubList.push(<TileItem style={styles.box}
-          key={item.title} item={item}
+          innerKey={item.title} item={item}
           keyboardShouldPersistTaps='always'
           setTile={this.props.setTile} />)
         // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
@@ -52,12 +55,21 @@ class TileIndex extends Component {
 
       })
 
-      while (renderSubList.length !== 4) {
-        renderSubList.push(<TileItem style={styles.box} item={{title: ""}}
-        key={Math.random()} setTile={() => {}}/>)
-      }
+        while (renderSubList.length !== 4) {
+          renderSubList.push(<TileItem style={styles.box} item={{title: ""}}
+          innerKey={'empty' + this.props.currentTileSet + renderSubList.length} setTile={() => {}}/>)
 
-      renderList.push(renderSubList)
+        }
+        renderList.push(renderSubList)
+
+        renderSubList = []
+        while (renderSubList.length !== 4) {
+          renderSubList.push(<TileItem style={styles.box} item={{title: ""}}
+          innerKey={'empty' + this.props.currentTileSet + renderSubList.length} setTile={() => {}}/>)
+
+        }
+          renderList.push(renderSubList)
+
 
     return renderList
 
@@ -88,11 +100,11 @@ class TileIndex extends Component {
 
     return (
       <View style={{flex: 2}}>
-        <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>
+        <View  key={'top-index'} style={{ flex: 4, flexDirection: 'row', backgroundColor: '#F7DC6F'}}>
         {listButtons[0]}
 
         </View>
-        <View style={{ flex: 4, flexDirection: 'row', backgroundColor: '#82E0AA'}} >
+        <View key={'bottom-index'} style={{ flex: 4, flexDirection: 'row', backgroundColor: '#82E0AA'}} >
         {listButtons[1]}
 
         </View>

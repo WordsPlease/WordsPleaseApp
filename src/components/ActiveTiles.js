@@ -20,7 +20,8 @@ class ActiveTiles extends Component {
     let activeStateKeys = Object.keys(activeState)
     for (i = 0; i < activeStateKeys.length; i++) {
       let currentTile = activeState[activeStateKeys[i]]
-      if (activeStateKeys[i] === 'currentTileSet') {
+      if (activeStateKeys[i] === 'currentTileSet' || activeStateKeys[i] ===
+    'pageNumber') {
         continue
       }
       if (currentTile.title != "") {
