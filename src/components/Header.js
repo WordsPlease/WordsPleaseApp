@@ -2,19 +2,29 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import ActiveTiles from './ActiveTiles';
 import BackButton from './BackButton';
+import ToggleSetting from './ToggleSetting';
 
 class Header extends Component {
 
+  constructor(props) {
+    super(props)
+    this.changeSetting = this.changeSetting.bind(this);
+  }
+
   componentWillMount(){
-    // console.log(this.props.getSetting);
-    // console.warn(this.props.getSetting(1));
     this.props.getSetting(1)
-    // this.props.fetch();
+  }
+
+  changeSetting() {
+    this.props.setting.id === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
   }
 
   render() {
+    console.log(this.props.setting)
+    let color = this.props.setting.id === 1 ? '#ddd' : '#F8C471'
     return(
-    <View style={{flex: 3, flexDirection: 'row', backgroundColor: '#ddd'}}>
+    <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
+      <ToggleSetting changeSetting={this.changeSetting}/>
       <BackButton onPressHandler={this.props.onPressHandler}/>
       <ActiveTiles
         activeTileState={this.props.activeTileState} />

@@ -22,15 +22,19 @@ class TileIndex extends Component {
   }
 
   componentWillReceiveProps(nextProps){
+console.log(nextProps.currentTileSet)
+console.log(this.props.currentTileSet)
+    if (nextProps.currentTileSet !== this.props.currentTileSet) {
 
       if (nextProps.currentTileSet==='middle') {
         this.props.getMiddles(nextProps.sentenceState.activeStarter.id)
       } else if (nextProps.currentTileSet==='finisher') {
         this.props.getFinishers(nextProps.sentenceState.activeMiddle.id, this.props.setting.id)
       }
-      else if (this.props.currentTileSet==='starter') {
+      else if (nextProps.currentTileSet==='starter') {
         this.props.getStarters();
       }
+    }
   }
 
   renderList() {
