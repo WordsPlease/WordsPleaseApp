@@ -17,7 +17,6 @@ It is built for the Ipad with React Native. We will be using a Rails back-end wi
        * Sentence In progress
    * Button to reset
       * tap to go back
-      * hold to reset
    * Pictures
    * Tutorial
    * seed data
