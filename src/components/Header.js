@@ -19,7 +19,7 @@ class Header extends Component {
     if (this.props.activeTileState.currentTileSet === "starter") {
       this.props.setting[0] === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
     } else {
-      console.warn("Starter onleh")
+      // console.warn("Starter onleh")
     }
   }
 
@@ -27,7 +27,7 @@ class Header extends Component {
     // console.log(this.props.activeTileState)
     let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
 
-    console.warn(this.props.setting);
+    // console.warn(this.props.setting);
 
     let bg = null
 

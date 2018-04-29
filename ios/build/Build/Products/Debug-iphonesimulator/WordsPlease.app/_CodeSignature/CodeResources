@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		SDexosUmuufxP/ZiwlC7+xGsFdI=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
 		ioIrFTQI2OEuRG1OzDRLaAJHUp8=
@@ -80,6 +84,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			SDexosUmuufxP/ZiwlC7+xGsFdI=
+			</data>
+			<key>hash2</key>
+			<data>
+			IB1BHAtF7ARe+u5wddDZZ0WlRuQR9zarCwcy43VAJME=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
