@@ -49,6 +49,7 @@ class TileIndex extends Component {
 
         renderSubList.push(<TileItem style={styles.box}
           innerKey={item.title} item={item}
+          key={item.title}
           keyboardShouldPersistTaps='always'
           setTile={this.props.setTile} />)
         // renderSubList.push(<TileItem style={styles.box} key={item.id} item={item}
