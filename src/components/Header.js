@@ -11,7 +11,7 @@ class Header extends Component {
     this.changeSetting = this.changeSetting.bind(this);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.getSetting(1)
   }
 
@@ -24,13 +24,30 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props.activeTileState)
+    // console.log(this.props.activeTileState)
     let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
     // <Image style={{flex: 1}} source={{uri: this.props.setting.image_path}} />
+    //
+    console.warn(this.props.setting);
+
+    let bg = null
+
+    if (this.props.setting[2]) {
+      bg =
+        <Image style={{flex:3, resizeMode: 'contain'}} source={{uri: this.props.setting[2]}} />
+      } else {
+      bg = null
+    }
+
+
+
     return(
     <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
-      <ToggleSetting changeSetting={this.changeSetting}/>
-      <BackButton onPressHandler={this.props.onPressHandler}/>
+      {bg}
+      <ToggleSetting
+        changeSetting={this.changeSetting}/>
+      <BackButton
+        onPressHandler={this.props.onPressHandler}/>
       <ActiveTiles
         activeTileState={this.props.activeTileState} />
       <View>
