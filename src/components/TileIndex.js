@@ -18,7 +18,6 @@ class TileIndex extends Component {
   componentWillMount() {
     // this.setState({list: TestData})
     this.props.getStarters();
-
   }
 
   componentWillReceiveProps(nextProps){
