@@ -16,11 +16,21 @@ class Main extends Component {
     this.onPressHandler = this.onPressHandler.bind(this);
     this.capitalize = this.capitalize.bind(this);
     this.getPrevTileSet = this.getPrevTileSet.bind(this);
+    this.changeTilePageNumber = this.changeTilePageNumber.bind(this);
     this.state = {
       activeStarter: {title: ""},
       activeMiddle: {title: ""},
       activeFinisher: {title: ""},
-      currentTileSet: "starter"
+      currentTileSet: "starter",
+      pageNumber: 0
+    }
+  }
+
+  changeTilePageNumber(direction, tileLength) {
+    if (direction === "forward" && (this.state.pageNumber + 1) * 8 < tileLength) {
+      this.setState({pageNumber: this.state.pageNumber + 1})
+    } else if (direction === "back" && this.state.pageNumber !== 0) {
+      this.setState({pageNumber: this.state.pageNumber - 1})
     }
   }
 
@@ -67,7 +77,7 @@ class Main extends Component {
     let currentTile = this.state.currentTileSet
     let actualCurrentTileSet = this.getPrevTileSet(currentTile)
     let prevTile = "active" + this.capitalize(actualCurrentTileSet)
-    let newState = {currentTileSet: actualCurrentTileSet}
+    let newState = {currentTileSet: actualCurrentTileSet, pageNumber: 0}
     newState[prevTile] = {title: ""}
     this.setState(newState)
   }
@@ -76,11 +86,12 @@ class Main extends Component {
     return (
       <View style={{flex: 1}}>
         <HeaderContainer style={{flex: 4}} onPressHandler={this.onPressHandler}
-          activeTileState={this.state} />
+          activeTileState={this.state} pageButtonHandler={this.changeTilePageNumber} />
         <TileIndexContainer
           setTile={this.setActiveTile}
           currentTileSet={this.state.currentTileSet}
           sentenceState={this.state}
+          pageNumber={this.state.pageNumber}
           style={{flex: 1}} />
       </View>
     )

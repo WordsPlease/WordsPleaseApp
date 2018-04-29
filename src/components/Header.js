@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import ActiveTiles from './ActiveTiles';
 import BackButton from './BackButton';
 import ToggleSetting from './ToggleSetting';
@@ -24,13 +24,19 @@ class Header extends Component {
   }
 
   render() {
+    console.log(this.props.activeTileState)
     let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
+    // <Image style={{flex: 1}} source={{uri: this.props.setting.image_path}} />
     return(
     <View style={{flex: 3, flexDirection: 'row', backgroundColor: color}}>
       <ToggleSetting changeSetting={this.changeSetting}/>
       <BackButton onPressHandler={this.props.onPressHandler}/>
       <ActiveTiles
         activeTileState={this.props.activeTileState} />
+      <View>
+        <Text style={{flex:1}} onPress={this.props.pageButtonHandler.bind(this, "back", Object.keys(this.props.tiles).length)}>Back</Text>
+        <Text style={{flex:1}} onPress={this.props.pageButtonHandler.bind(this, "forward", Object.keys(this.props.tiles).length)}>Forward</Text>
+      </View>
     </View>
   )}
 }
