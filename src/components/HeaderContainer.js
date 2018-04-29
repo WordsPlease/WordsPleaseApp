@@ -5,11 +5,10 @@ import Header from './Header';
 
 const mapDispatchToProps = (dispatch) => ({
   getSetting: (settingId) => dispatch(getSetting(settingId)),
-
 })
 
 const mapStateToProps = state => ({
-  setting: state,
+  setting: state.setting
 });
 
 export default connect(
