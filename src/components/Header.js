@@ -17,7 +17,7 @@ class Header extends Component {
 
   changeSetting() {
     if (this.props.activeTileState.currentTileSet === "starter") {
-      this.props.setting.id === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
+      this.props.setting[0] === 1 ? this.props.getSetting(2) : this.props.getSetting(1)
     } else {
       console.warn("Starter onleh")
     }
@@ -26,8 +26,7 @@ class Header extends Component {
   render() {
     // console.log(this.props.activeTileState)
     let color = this.props.setting.id !== 2 ? '#ddd' : '#F8C471'
-    // <Image style={{flex: 1}} source={{uri: this.props.setting.image_path}} />
-    //
+
     console.warn(this.props.setting);
 
     let bg = null
