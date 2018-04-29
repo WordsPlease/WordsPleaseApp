@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, ImageBackground, Text } from 'react-native';
 import ActiveTiles from './ActiveTiles';
 import BackButton from './BackButton';
 import ToggleSetting from './ToggleSetting';
@@ -33,9 +33,7 @@ class Header extends Component {
 
     if (this.props.setting[2]) {
       bg =
-        <Image style={{flex:3, resizeMode: 'contain'}} source={{uri: this.props.setting[2]}} />
-      } else {
-      bg = null
+      <ImageBackground style={{width: '100%', height: '100%', position: 'absolute'}} source={{uri: this.props.setting[2]}}/>
     }
 
 
