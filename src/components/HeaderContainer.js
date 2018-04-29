@@ -8,7 +8,8 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 const mapStateToProps = state => ({
-  setting: state.setting
+  setting: state.setting,
+  tiles: state.tiles
 });
 
 export default connect(
