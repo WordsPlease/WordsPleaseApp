@@ -46,14 +46,14 @@ class Header extends Component {
     <View style={{flex: 3}}>
       {bg}
       <View style={styles.buttons}>
-        <BackButton
-          onPressHandler={this.props.onPressHandler}/>
         <ToggleSetting
           changeSetting={this.changeSetting}/>
       </View>
-      <View style={{flexDirection: 'row', flex: 1}}>
+      <View style={{display: 'flex', alignItems: 'center', width: '100%', flexDirection: 'row', flex: 1}}>
         <ActiveTiles
           activeTileState={this.props.activeTileState} />
+        <BackButton
+          onPressHandler={this.props.onPressHandler}/>
       </View>
     </View>
   )}

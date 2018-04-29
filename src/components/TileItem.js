@@ -1,11 +1,16 @@
 import React from 'react';
 import { Text, Image, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
+import Tts from 'react-native-tts';
 
 const TileItem = (props) => {
   return (
     <TouchableOpacity style={[styles.containerStyle, props.style]} key={props.innerKey}
-      onPress={(e) => props.setTile(props.item, e)}>
+      onPress={(e) => {
+        props.setTile(props.item, e)
+        Tts.speak(props.item.title, { iosVoiceId: 'com.apple.ttsbundle.Samantha-compact' })
+        }
+      }>
       <Image source={{uri: 'No'}} style={{width: 40, height: 40}}/>
       <Text>{props.item.title}</Text>
     </TouchableOpacity>

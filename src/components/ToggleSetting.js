@@ -20,11 +20,13 @@ class ToggleSetting extends Component {
 export default ToggleSetting;
 
 const styles = {
-  width: 100,
-  height: 40,
-  backgroundColor: '#FBFCFC',
+  width: 'auto',
+  height: 'auto',
+  backgroundColor: 'lightgrey',
   borderWidth: 1,
   borderRadius: 2,
   borderColor: '#17202A',
-  paddingTop: 10
+  marginTop: 10,
+  marginRight: 10,
+  justifyContent: 'center'
 }

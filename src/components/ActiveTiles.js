@@ -71,11 +71,13 @@ const styles = {
     flexDirection: 'column',
     marginTop: 10,
     marginBottom: 30,
-    marginRight: '25%',
+    // marginRight: '25%',
     marginLeft: '25%',
     backgroundColor: '#ddd',
     borderWidth: 1,
-    borderColor: '#17202A'
+    borderColor: '#17202A',
+    display: 'flex',
+    alignSelf: 'center'
   }
 }
 
