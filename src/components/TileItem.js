@@ -8,9 +8,9 @@ const TileItem = (props) => {
     <TouchableOpacity style={[styles.containerStyle, props.style]} key={props.innerKey}
       onPress={(e) => {
         props.setTile(props.item, e)
-        // Tts.speak(props.item.title, { iosVoiceId: 'com.apple.ttsbundle.Samantha-compact' })
+        Tts.speak(props.item.title, { iosVoiceId: 'com.apple.ttsbundle.Samantha-compact' })
       }}>
-      <Image source={{uri: 'No'}} style={{width: 40, height: 40}}/>
+      <Image source={{uri: props.item.image_path}} style={{width: 40, height: 40}}/>
       <Text>{props.item.title}</Text>
     </TouchableOpacity>
   )
@@ -22,6 +22,7 @@ const styles = {
     borderRadius: 2,
     borderColor: '#ddd',
     borderBottomWidth: 0,
+    backgroundColor: '#ebe3c8',
     elevation: 1,
     marginLeft: 0,
     marginRight: 0,
