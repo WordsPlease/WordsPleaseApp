@@ -35,7 +35,7 @@ class TileIndex extends Component {
       if (nextProps.currentTile === 'middle') {
         this.props.getMiddles(nextProps.sentenceState.activeStarter.id)
       } else if (nextProps.currentTileSet==='finisher') {
-        this.props.getFinishers(nextProps.sentenceState.activeMiddle.id, this.props.setting.id)
+        this.props.getFinishers(nextProps.sentenceState.activeMiddle.id, nextProps.setting.id)
       } else if (nextProps.currentTileSet==='starter') {
         this.props.getStarters();
       }

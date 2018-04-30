@@ -31,7 +31,7 @@ class ActiveTiles extends Component {
         } else {
           renderedSentence += currentTile.title + ' '
         }
-        renderedArray.push(<TileItem setTile={() => { console.log("don't touch me") } }
+        renderedArray.push(<TileItem setTile={() => { console.log("") } }
         item={currentTile} key={currentTile.title} style={styles.tiles} /> )
       }
     }
